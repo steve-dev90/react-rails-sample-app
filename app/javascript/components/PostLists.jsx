@@ -30,6 +30,7 @@ export default class PostsList extends React.Component {
     return (
       <div>
         <h3>All Posts</h3>
+        <Link to='/posts/new'>New Post</Link>
         <table>
           <thead>
             <tr>
@@ -54,6 +55,9 @@ export default class PostsList extends React.Component {
                   <td>{post.description}</td>
                   <td>{post.is_published ? 'Yes' : 'No' }</td>
                   <td>
+                    <Link to={`/posts/${post.id}/edit`}>
+                      Edit
+                    </Link>
                     <button onClick={() => this.handleDelete(post.id) }>
                       Delete
                     </button>

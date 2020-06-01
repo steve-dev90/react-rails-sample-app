@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 import Posts from './PostLists';
 import PostDetails from './PostDetails';
+import CreatePost from './CreatePost';
+import UpdatePost from './UpdatePost';
 
 export default () => {
   return (
@@ -13,9 +15,19 @@ export default () => {
         <Posts />
       </Route>
       <Route
+        path="/posts/new"
+        exact
+        component={CreatePost}
+       />
+      <Route
         path="/posts/:id"
         exact
         component={PostDetails}
+       />
+      <Route
+        path="/posts/:id/edit"
+        exact
+        component={UpdatePost}
        />
     </Switch>
   );
